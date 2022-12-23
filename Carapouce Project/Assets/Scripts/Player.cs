@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Controls;
 
 public class Player : MonoBehaviour
 {
@@ -9,7 +7,6 @@ public class Player : MonoBehaviour
     private CharacterController _controller;
     private float gravityValue = -9.81f, v, h;
     private Vector3 playerVelocity;
-    [SerializeField] public GameObject Menu;
     public static bool isPaused;
     [Tooltip("Sensibilité de la souris. Peut être modifiée par le joueur dans les paramètres.")]
     [Range(0.1f, 9f)] [SerializeField] float CameraSensitivity = 2f;
@@ -22,19 +19,15 @@ public class Player : MonoBehaviour
 
     private void Awake() {
         _controller = GetComponent<CharacterController>();
-        Menu.SetActive(false);
         isPaused = false;
     }
 
-    void Update()
-    {
-        Pause();
+    void Update() {
         Walk();
         RotateCamera();
     }
 
-    void Walk()
-    {
+    void Walk() {
         Vector3 move = Vector3.zero;
         v = 0;
         h = 0;
@@ -50,8 +43,7 @@ public class Player : MonoBehaviour
 
 
 
-    void RotateCamera()
-    {
+    void RotateCamera() {
         rotation.x += Input.GetAxis("Mouse X") * CameraSensitivity;
         rotation.y += Input.GetAxis("Mouse Y") * CameraSensitivity;
         rotation.y = Mathf.Clamp(rotation.y, -yRotationLimit, yRotationLimit);
@@ -59,20 +51,5 @@ public class Player : MonoBehaviour
         var yQuat = Quaternion.AngleAxis(rotation.y, Vector3.left);
         transform.localRotation = xQuat * yQuat;
     }
-
-    void Pause() {
-        if (Input.GetButtonDown("Cancel")) {
-            if (Menu.activeSelf) {
-                Menu.SetActive(false);
-                isPaused = false;
-            }
-            else {
-                Menu.SetActive(true);
-                isPaused = true;
-                
-            }
-
-        }
-    }
-
+    
 }
