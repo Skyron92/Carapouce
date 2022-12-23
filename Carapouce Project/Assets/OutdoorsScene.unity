@@ -5610,7 +5610,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 533032814}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.66, y: 0.33}
   m_AnchorMax: {x: 1, y: 0.66}
@@ -5949,6 +5949,7 @@ GameObject:
   - component: {fileID: 533032814}
   - component: {fileID: 533032816}
   - component: {fileID: 533032815}
+  - component: {fileID: 533032817}
   m_Layer: 5
   m_Name: "Roue des m\xE9t\xE9os"
   m_TagString: Untagged
@@ -5969,9 +5970,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 521444847}
-  - {fileID: 1814929529}
   - {fileID: 430519251}
   - {fileID: 596448161}
+  - {fileID: 1814929529}
   m_Father: {fileID: 1216340476}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6018,6 +6019,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533032813}
   m_CullTransparentMesh: 1
+--- !u!114 &533032817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533032813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc81b4a5c69b03048906e588ae15121e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Buttons: []
 --- !u!1 &596448160
 GameObject:
   m_ObjectHideFlags: 0
@@ -6050,7 +6064,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 533032814}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.33, y: 0}
   m_AnchorMax: {x: 0.66, y: 0.33}
@@ -11271,7 +11285,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 533032814}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.33}
   m_AnchorMax: {x: 0.33, y: 0.66}
@@ -11675,7 +11689,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
-  Menu: {fileID: 0}
   CameraSensitivity: 2
   yRotationLimit: 88
 --- !u!143 &1971607485
